@@ -1,0 +1,247 @@
+.showcase {
+  min-height: 100vh;
+  background: var(--vcn-color-bg);
+  padding: 16px;
+}
+
+.showcase-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.showcase-header {
+  background: var(--vcn-color-surface);
+  border-radius: var(--vcn-radius-lg);
+  box-shadow: var(--vcn-shadow-sm);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--vcn-color-primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  transition: color 0.2s;
+  
+  &:hover {
+    color: var(--vcn-color-primary-hover);
+  }
+}
+
+.game-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.info-card {
+  background: var(--vcn-color-surface);
+  border-radius: var(--vcn-radius-md);
+  box-shadow: var(--vcn-shadow-sm);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-label {
+  font-size: 13px;
+  color: var(--vcn-color-text-secondary);
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--vcn-color-primary);
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+  
+  @media (max-width: 640px) {
+    gap: 8px;
+  }
+}
+
+.game-card {
+  aspect-ratio: 1;
+  cursor: pointer;
+  perspective: 1000px;
+  
+  &.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  &.matched {
+    cursor: default;
+    
+    .card-back {
+      background: var(--vcn-color-success-light);
+      border-color: var(--vcn-color-success);
+    }
+  }
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--vcn-radius-md);
+  border: 2px solid var(--vcn-color-border);
+}
+
+.card-front {
+  background: var(--vcn-color-primary);
+  color: white;
+}
+
+.card-back {
+  background: var(--vcn-color-surface);
+  transform: rotateY(180deg);
+}
+
+.card-emoji {
+  font-size: 48px;
+  
+  @media (max-width: 640px) {
+    font-size: 36px;
+  }
+}
+
+.reset-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: var(--vcn-color-surface);
+  color: var(--vcn-color-text);
+  border: 1px solid var(--vcn-color-border);
+  border-radius: var(--vcn-radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+  
+  &:hover {
+    background: var(--vcn-color-bg);
+    border-color: var(--vcn-color-primary);
+    color: var(--vcn-color-primary);
+  }
+}
+
+.win-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.modal-content {
+  position: relative;
+  z-index: 20;
+  background: var(--vcn-color-surface);
+  border-radius: var(--vcn-radius-lg);
+  box-shadow: var(--vcn-shadow-lg);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  animation: modal-pop 0.3s ease-out;
+}
+
+@keyframes modal-pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: -10px;
+  opacity: 0;
+  animation: confetti-fall 3s linear forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    top: -10px;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+    transform: rotate(720deg);
+  }
+}
+
+.win-icon {
+  color: var(--vcn-color-success);
+  margin: 0 auto 16px;
+}
+
+.win-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--vcn-color-text);
+  margin-bottom: 8px;
+}
+
+.win-message {
+  font-size: 16px;
+  color: var(--vcn-color-text-secondary);
+  margin-bottom: 20px;
+}

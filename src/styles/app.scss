@@ -1,25 +1,28 @@
 :root {
-  --color-primary: #3b82f6;
-  --color-primary-hover: #2563eb;
-  --color-primary-light: #dbeafe;
-  --color-success: #10b981;
-  --color-success-light: #d1fae5;
-  --color-error: #ef4444;
-  --color-error-light: #fee2e2;
-  --color-warning: #f59e0b;
-  --color-warning-light: #fef3c7;
-  --color-bg: #f9fafb;
-  --color-surface: #ffffff;
-  --color-border: #e5e7eb;
-  --color-text: #111827;
-  --color-text-secondary: #6b7280;
-  --color-text-muted: #9ca3af;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --vcn-color-primary: #3b82f6;
+  --vcn-color-primary-hover: #2563eb;
+  --vcn-color-primary-light: #dbeafe;
+  --vcn-color-secondary: #6d28d9;
+  --vcn-color-secondary-hover: #5b21b6;
+  --vcn-color-secondary-light: #ede9fe;
+  --vcn-color-success: #10b981;
+  --vcn-color-success-light: #d1fae5;
+  --vcn-color-error: #ef4444;
+  --vcn-color-error-light: #fee2e2;
+  --vcn-color-warning: #f59e0b;
+  --vcn-color-warning-light: #fef3c7;
+  --vcn-color-bg: #f9fafb;
+  --vcn-color-surface: #ffffff;
+  --vcn-color-border: #e5e7eb;
+  --vcn-color-text: #111827;
+  --vcn-color-text-secondary: #6b7280;
+  --vcn-color-text-muted: #9ca3af;
+  --vcn-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --vcn-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --vcn-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --vcn-radius-sm: 4px;
+  --vcn-radius-md: 8px;
+  --vcn-radius-lg: 12px;
 }
 
 * {
@@ -29,12 +32,17 @@
 }
 
 body {
-  font-family: "Be_Vietnam_Pro", system-ui, -apple-system, sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);
+  font-family:
+    "Be_Vietnam_Pro",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background: var(--vcn-color-bg);
+  color: var(--vcn-color-text);
   line-height: 1.5;
 }
 
-code, pre {
+code,
+pre {
   font-family: "Consolas", "Monaco", monospace;
 }
